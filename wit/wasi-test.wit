@@ -1,0 +1,35 @@
+package wasi:test;
+
+interface tests {
+    resource test-options {
+        constructor();
+        /// The stream must be dropped when the test-context is dropped.
+        enable-logging: func() -> stream<string>;
+    }
+
+    resource test-context {
+        constructor(opts: test-options);
+        logging-enabled: func() -> bool;
+        log: func(msg: string);
+    }
+
+    variant test-result {
+        pass,
+        fail(string),
+    }
+
+    resource test-case {
+        name: func() -> string;
+        run: func(ctx: borrow<test-context>) -> test-result;
+    }
+
+    all: func() -> list<test-case>;
+}
+
+world suite {
+    export tests;
+}
+
+world runner {
+    import tests;
+}

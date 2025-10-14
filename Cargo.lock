@@ -340,12 +340,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
 
 [[package]]
-name = "wasi-clocks-tests"
+name = "wasi"
+version = "0.14.7+wasi-0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "883478de20367e224c0090af9cf5f9fa85bed63a95c1abf3afc5c083ebc06e8c"
+dependencies = [
+ "wasip2",
+]
+
+[[package]]
+name = "wasi-http-tests"
 version = "0.1.0"
 dependencies = [
- "anyhow",
+ "wasi",
  "wasi-test",
- "wasip3",
 ]
 
 [[package]]
@@ -364,10 +372,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "wasip3"
-version = "0.1.1+wasi-0.3.0-rc-2025-08-15"
+name = "wasip2"
+version = "1.0.1+wasi-0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e7b678d2dc4aedac67db9b7e6808cef00db63fc492744c132977875a7fe4ec5"
+checksum = "0562428422c63773dad2c345a1882263bbf4d65cf3f42e90921f787ef5ad58e7"
 dependencies = [
  "wit-bindgen",
 ]

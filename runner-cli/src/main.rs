@@ -43,6 +43,7 @@ async fn run_tests() -> usize {
                     for msg in logs {
                         eprintln!("{msg}");
                     }
+                    eprintln!();
                 }
             }
         }

@@ -1,5 +1,5 @@
 [package]
-name = "wasi-clocks-tests"
+name = "wasi-http-tests"
 version = "0.1.0"
 edition = "2024"
 
@@ -7,6 +7,5 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-anyhow = "1.0.100"
+wasi = "0.14.7"
 wasi-test = { path = "../../rust" }
-wasip3 = "0.1.1"

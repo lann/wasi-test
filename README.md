@@ -2,6 +2,8 @@
 
 WIT: [`wit/wasi-test.wit`](./wit/wasi-test.wit)
 
+![Composition Diagram](/composition.svg)
+
 ## Example
 
 [`examples/wasi-http-tests/src/lib.rs`](./examples/wasi-http-tests/src/lib.rs):
